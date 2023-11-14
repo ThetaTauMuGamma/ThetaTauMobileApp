@@ -17,6 +17,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: -16, // Adjust this value as needed
     fontSize: 48,
+    alignItems: 'center', // Center horizontally
+    justifyContent: 'center', // Center vertically
   },
   title: {
     textAlign: 'center',
