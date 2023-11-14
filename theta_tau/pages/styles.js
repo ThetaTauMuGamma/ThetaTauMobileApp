@@ -90,11 +90,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#8e05c2',
     borderWidth: 1,
     borderColor: '#8e05c2',
-    color: '#fff',
     margin: 16,
     padding: 10,
     borderRadius: 10,
-    fontWeight: '600'
+    alignItems: 'center', // Center horizontally
+    justifyContent: 'center', // Center vertically
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: '600',
   },
   bottom: {
     display: 'flex',

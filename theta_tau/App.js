@@ -10,10 +10,16 @@ import EasterEgg from "./pages/easterEgg.jsx";
 import Login from "./pages/login.jsx";
 import Meeting from "./pages/meeting.jsx";
 // import splash from "./components/splash.js";
+import {Appearance} from 'react-native';
 
 
 
 const Stack = createNativeStackNavigator();
+
+const colorScheme = Appearance.getColorScheme();
+if (colorScheme === 'dark') {
+  // Use dark color scheme
+}
 
 export default function App() 
 {
@@ -31,7 +37,7 @@ export default function App()
         <Stack.Screen name="Pillars" component={Pillars}/>
         <Stack.Screen name="EasterEgg" component={EasterEgg} />
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Meeting" component={Meeting} />
+        {/* <Stack.Screen name="Meeting" component={Meeting} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

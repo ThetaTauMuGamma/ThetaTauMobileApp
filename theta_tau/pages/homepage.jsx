@@ -21,6 +21,9 @@ const Homepage = () => {
   const handleArrowPress3 = () => {
     setIsDropped3(!isDropped3)
   };
+  const handleArrowPress4 = () => {
+    setIsDropped4(!isDropped4)
+  };
 
   return (
     <View style={styles.container} >
@@ -95,6 +98,22 @@ const Homepage = () => {
               <Text style={styles.dropdownText}>“Whatsoever thy hand findeth to do, do it with thy might;...” ~Ecclesiastes 9:10</Text>
             </View>
           )}
+
+        {/* <TouchableOpacity onPress={() => handleArrowPress4()}>
+          <View style={styles.dropdownRow}>
+            <View style={styles.dropdownRow2}>
+              <Text style={styles.aboutMe}>Open Motto</Text>
+            </View>
+              <View style={{ paddingRight: 10}}>
+                {isDropped3 ? <Text>&#9650;</Text> : <Text>&#9660;</Text>}
+              </View>
+          </View>
+        </TouchableOpacity>
+          {isDropped4 && (
+            <View style={styles.dropdownContainer}>
+              <Text style={styles.dropdownText}>“Whatsoever thy hand findeth to do, do it with thy might;...” ~Ecclesiastes 9:10</Text>
+            </View>
+          )} */}
       
       <Extra />
       </ScrollView>
