@@ -23,8 +23,7 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   themeToggleIcon: {
-    fontSize: 32,
-    cursor: 'pointer',
+    fontSize: 32
   },
   themeToggle: {
     textAlign: 'center',
@@ -95,8 +94,7 @@ const styles = StyleSheet.create({
     margin: 16,
     padding: 10,
     borderRadius: 10,
-    fontWeight: '600',
-    cursor: 'pointer',
+    fontWeight: '600'
   },
   bottom: {
     display: 'flex',
@@ -106,8 +104,7 @@ const styles = StyleSheet.create({
   },
   create: {
     fontSize: 16,
-    marginTop: 16,
-    cursor: 'pointer',
+    marginTop: 16
   },
 });
 
