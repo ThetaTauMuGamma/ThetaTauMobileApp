@@ -1,10 +1,11 @@
+// login.jsx
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Icon from 'react-native-vector-icons/FontAwesome'; // Adjust the icon set based on your preference
+import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
-Icon.loadFont(); // Load the icon font
+Icon.loadFont();
 
 const Login = () => {
   const [theme, setTheme] = useState('light');
@@ -35,40 +36,83 @@ const Login = () => {
     }
   };
 
+  const appStyles = styles(theme);
+
   return (
-    <View style={[styles.app, { backgroundColor: theme === 'dark' ? '#000000' : '#ffffff' }]}>
-      <View style={styles.loginContainer}>
-        <Text style={[styles.title, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>Login</Text>
-        <View style={styles.container}>
-          <View style={styles.top}>
-            {/* Add your social login buttons here */}
-          </View>
-          <Text style={styles.divider}><Text>Or</Text></Text>
-          <View style={styles.form}>
-            <Text>Email</Text>
-            <TextInput style={styles.input} placeholder="Enter your email" keyboardType="email-address" />
-            <Text>Password</Text>
-            <TextInput style={styles.input} placeholder="Enter your password" secureTextEntry={true} />
-            <View style={styles.remember}>
-              {/* Add your checkbox and text here */}
+    <View style={appStyles.app}>
+      {theme === 'light' ? (
+        <ImageBackground
+          source={require('../assets/loginlightbkgd.png')} // Replace with the actual path to your light mode background image
+          style={{ ...appStyles.app, flex: 1 }} // Adjust the styles as needed
+        >
+          <View style={appStyles.loginContainer}>
+            <Text style={[appStyles.title, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>Login</Text>
+            <View style={appStyles.container}>
+              <View style={appStyles.top}>
+                {/* Add your social login buttons here */}
+              </View>
+              <Text style={appStyles.divider}><Text>Or</Text></Text>
+              <View style={appStyles.form}>
+                <Text style={appStyles.label}>Email</Text>
+                <TextInput style={appStyles.input} placeholder="Enter your email" keyboardType="email-address" />
+                <Text style={appStyles.label}>Password</Text>
+                <TextInput style={appStyles.input} placeholder="Enter your password" secureTextEntry={true} />
+                <View style={appStyles.remember}>
+                  {/* Add your checkbox and text here */}
+                </View>
+                <TouchableOpacity style={appStyles.button}><Text style={appStyles.buttonText}>Log In</Text></TouchableOpacity>
+              </View>
+              <View style={appStyles.bottom}>
+                {/* Add your Forgot Password and Reset Password links here */}
+              </View>
+              <Text style={appStyles.create}>Sign up here</Text>
             </View>
-            <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>Log In</Text></TouchableOpacity>
+            <View style={appStyles.themeToggle}>
+              <Text style={[appStyles.themeText, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>
+                {theme.charAt(0).toUpperCase() + theme.slice(1)} Theme
+              </Text>
+              <TouchableOpacity onPress={switchTheme}>
+                <Icon name={theme === 'dark' ? 'toggle-on' : 'toggle-off'} size={32} color={theme === 'dark' ? '#ffffff' : '#000000'} />
+              </TouchableOpacity>
+            </View>
           </View>
-          <View style={styles.bottom}>
-            {/* Add your Forgot Password and Reset Password links here */}
+        </ImageBackground>
+      ) : (
+        // For dark mode or any other theme, no background image
+        <View style={appStyles.loginContainer}>
+          <Text style={[appStyles.title, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>Login</Text>
+          <View style={appStyles.container}>
+            <View style={appStyles.top}>
+              {/* Add your social login buttons here */}
+            </View>
+            <Text style={appStyles.divider}><Text>Or</Text></Text>
+            <View style={appStyles.form}>
+              <Text style={appStyles.label}>Email</Text>
+              <TextInput style={appStyles.input} placeholder="Enter your email" keyboardType="email-address" />
+              <Text style={appStyles.label}>Password</Text>
+              <TextInput style={appStyles.input} placeholder="Enter your password" secureTextEntry={true} />
+              <View style={appStyles.remember}>
+                {/* Add your checkbox and text here */}
+              </View>
+              <TouchableOpacity style={appStyles.button}><Text style={appStyles.buttonText}>Log In</Text></TouchableOpacity>
+            </View>
+            <View style={appStyles.bottom}>
+              {/* Add your Forgot Password and Reset Password links here */}
+            </View>
+            <Text style={appStyles.create}>Sign up here</Text>
           </View>
-          <Text style={styles.create}>Sign up here</Text>
+          <View style={appStyles.themeToggle}>
+            <Text style={[appStyles.themeText, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>
+              {theme.charAt(0).toUpperCase() + theme.slice(1)} Theme
+            </Text>
+            <TouchableOpacity onPress={switchTheme}>
+              <Icon name={theme === 'dark' ? 'toggle-on' : 'toggle-off'} size={32} color={theme === 'dark' ? '#ffffff' : '#000000'} />
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.themeToggle}>
-        <Text style={[styles.themeText, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>
-          {theme.charAt(0).toUpperCase() + theme.slice(1)} Theme
-        </Text>
-        <TouchableOpacity onPress={switchTheme}>
-          <Icon name={theme === 'dark' ? 'toggle-on' : 'toggle-off'} size={32} color={theme === 'dark' ? '#ffffff' : '#000000'} />
-        </TouchableOpacity>
-      </View>
-    </View>
+      )}
     </View>
   );
 };
+
 export default Login;
