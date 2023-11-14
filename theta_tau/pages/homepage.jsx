@@ -24,6 +24,7 @@ const Homepage = () => {
 
   return (
     <View style={styles.container} >
+      
     <Pressable onPress={() => {navigation.navigate('EasterEgg')}}><Text style={{color: '#f2f2f2'}}>Easter</Text></Pressable>
       <Image
         style={styles.image}

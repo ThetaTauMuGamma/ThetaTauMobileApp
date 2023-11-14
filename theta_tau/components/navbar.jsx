@@ -20,7 +20,10 @@ const Navbar = () => {
           <Pressable style={styles.button} onPress={() => {navigation.navigate('Calender')}}>
               <Image source={require('../assets/calendar.png')} style={styles.icon} />
           </Pressable>
-          <Pressable style={styles.button} onPress={() => {navigation.navigate('Pillars')}}>
+          {/* <Pressable style={styles.button} onPress={() => {navigation.navigate('Pillars')}}>
+              <Image source={require('../assets/Pillars.png')} style={styles.icon} />
+          </Pressable> */}
+          <Pressable style={styles.button} onPress={() => {navigation.navigate('Meeting')}}>
               <Image source={require('../assets/Pillars.png')} style={styles.icon} />
           </Pressable>
       </View>
