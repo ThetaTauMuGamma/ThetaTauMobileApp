@@ -14,6 +14,9 @@ const Navbar = () => {
           <Pressable style={styles.button} onPress={() => {navigation.navigate('Brothers')}}>
               <Image source={require('../assets/Brothers_Tab.png')} style={styles.icon} />
           </Pressable>
+          <Pressable style={styles.button} onPress={() => {navigation.navigate('Login')}}>
+              <Image source={require('../assets/icon.png')} style={styles.icon} />
+          </Pressable>
           <Pressable style={styles.button} onPress={() => {navigation.navigate('Calender')}}>
               <Image source={require('../assets/rushIcon.png')} style={styles.icon} />
           </Pressable>
@@ -41,7 +44,7 @@ const styles = StyleSheet.create({
   
   },
   icon: {
-    marginHorizontal: 33,
+    marginHorizontal: 20,
     width: 40,
     height: 40,  
   },
