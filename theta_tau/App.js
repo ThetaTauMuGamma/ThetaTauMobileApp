@@ -7,6 +7,8 @@ import Calender from "./pages/calender.jsx";
 import BrotherPage from "./pages/brotherPage.jsx";
 import Pillars from "./pages/pillars.jsx";
 import EasterEgg from "./pages/easterEgg.jsx";
+import Login from "./pages/login.jsx";
+// import splash from "./components/splash.js";
 
 
 
@@ -27,6 +29,7 @@ export default function App()
         <Stack.Screen name="BrotherPage" component={BrotherPage} />
         <Stack.Screen name="Pillars" component={Pillars}/>
         <Stack.Screen name="EasterEgg" component={EasterEgg} />
+        <Stack.Screen name="Login" component={Login} />
       </Stack.Navigator>
     </NavigationContainer>
   );
