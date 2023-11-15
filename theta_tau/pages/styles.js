@@ -1,10 +1,10 @@
-// styles.js
-import { StyleSheet } from 'react-native';
+  // styles.js
+  import { StyleSheet } from 'react-native';
 
-const styles = (theme) => StyleSheet.create({
+const styles = StyleSheet.create({
   app: {
-    backgroundColor: theme === 'dark' ? '#000000' : '#ffffff',
-    color: theme === 'dark' ? '#ffffff' : '#000',
+    backgroundColor: '#ffffff',
+    color: '#000',
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
@@ -15,10 +15,10 @@ const styles = (theme) => StyleSheet.create({
   loginContainer: {
     paddingTop: 0,
     textAlign: 'center',
-    margin: -16,
+    margin: -16, // Adjust this value as needed
     fontSize: 48,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'center', // Center horizontally
+    justifyContent: 'center', // Center vertically
   },
   title: {
     textAlign: 'center',
@@ -40,7 +40,7 @@ const styles = (theme) => StyleSheet.create({
     margin: 'auto',
     boxShadow: '0px 0px 12px #333',
     borderRadius: 8,
-    backgroundColor: theme === 'dark' ? '#000000' : '#fff',
+    backgroundColor: '#fff',
   },
   top: {
     display: 'flex',
@@ -70,7 +70,6 @@ const styles = (theme) => StyleSheet.create({
   label: {
     margin: 8,
     fontWeight: '600',
-    color: theme === 'dark' ? '#ffffff' : '#000000', // Adjust text color based on theme
   },
   input: {
     padding: 8,
@@ -96,8 +95,8 @@ const styles = (theme) => StyleSheet.create({
     margin: 16,
     padding: 10,
     borderRadius: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'center', // Center horizontally
+    justifyContent: 'center', // Center vertically
   },
   buttonText: {
     color: '#fff',
@@ -111,8 +110,7 @@ const styles = (theme) => StyleSheet.create({
   },
   create: {
     fontSize: 16,
-    marginTop: 16,
-    color: theme === 'dark' ? '#ffffff' : '#000000', // Adjust text color based on theme
+    marginTop: 16
   },
 });
 

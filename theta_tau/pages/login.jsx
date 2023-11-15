@@ -1,9 +1,8 @@
-// Pollcode.js
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import styles from './stylespoll';
+import Icon from 'react-native-vector-icons/FontAwesome'; // Adjust the icon set based on your preference
+import styles from './styles';
 
 Icon.loadFont();
 
@@ -37,37 +36,40 @@ const Pollcode = () => {
     }
   };
 
-  const generateRandomCode = () => {
-    // Generate a random 6-digit code
-    const code = Math.floor(100000 + Math.random() * 900000);
-    setRandomCode(code);
-
-    // Display an alert with the generated code
-    // Alert.alert('Generated Code', `Your 6-digit code: ${code}`);
-  };
-
   return (
     <View style={[styles.app, { backgroundColor: theme === 'dark' ? '#000000' : '#ffffff' }]}>
-      <TouchableOpacity style={styles.darkModeToggle} onPress={switchTheme}>
-        <Text style={styles.darkModeText}>{theme === 'dark' ? 'Light Mode' : 'Dark Mode'}</Text>
-      </TouchableOpacity>
       <View style={styles.loginContainer}>
-        <Text style={[styles.title, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>Generate Meeting Code</Text>
+        <Text style={[styles.title, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>Login</Text>
         <View style={styles.container}>
-          {/* ... (other components) */}
-          {randomCode && (
-            <View style={styles.codeBox}>
-              <Text style={styles.codeText}>{randomCode}</Text>
+          <View style={styles.top}>
+            {/* Add your social login buttons here */}
+          </View>
+          <Text style={styles.divider}><Text>Or</Text></Text>
+          <View style={styles.form}>
+            <Text>Email</Text>
+            <TextInput style={styles.input} placeholder="Enter your email" keyboardType="email-address" />
+            <Text>Password</Text>
+            <TextInput style={styles.input} placeholder="Enter your password" secureTextEntry={true} />
+            <View style={styles.remember}>
+              {/* Add your checkbox and text here */}
             </View>
-          )}
-          <TouchableOpacity style={styles.button} onPress={generateRandomCode}>
-            <Text style={styles.buttonText}>Generate Code!</Text>
-          </TouchableOpacity>
-          {/* ... (other components) */}
+            <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>Log In</Text></TouchableOpacity>
+          </View>
+          <View style={styles.bottom}>
+            {/* Add your Forgot Password and Reset Password links here */}
+          </View>
+          <Text style={styles.create}>Sign up here</Text>
         </View>
+        <View style={styles.themeToggle}>
+        <Text style={[styles.themeText, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>
+          {theme.charAt(0).toUpperCase() + theme.slice(1)} Theme
+        </Text>
+        <TouchableOpacity onPress={switchTheme}>
+          <Icon name={theme === 'dark' ? 'toggle-on' : 'toggle-off'} size={32} color={theme === 'dark' ? '#ffffff' : '#000000'} />
+        </TouchableOpacity>
       </View>
+    </View>
     </View>
   );
 };
-
-export default Pollcode;
+export default Login;
