@@ -41,10 +41,6 @@ const Login = () => {
   return (
     <View style={appStyles.app}>
       {theme === 'light' ? (
-        <ImageBackground
-          source={require('../assets/loginlightbkgd.png')}
-          style={{ ...appStyles.app, flex: 1 }}
-        >
           <View style={appStyles.loginContainer}>
             <Text style={[appStyles.title, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>Login</Text>
             <View style={appStyles.container}>
@@ -61,11 +57,12 @@ const Login = () => {
                   {/* Add your checkbox and text here */}
                 </View>
                 <TouchableOpacity style={appStyles.button}><Text style={appStyles.buttonText}>Log In</Text></TouchableOpacity>
+                <TouchableOpacity style={appStyles.button}><Text style={appStyles.buttonText}>Forgot Password?</Text></TouchableOpacity>
               </View>
               <View style={appStyles.bottom}>
                 {/* Add your Forgot Password and Reset Password links here */}
               </View>
-              <Text style={appStyles.create}>Sign up here</Text>
+              {/* <Text style={appStyles.create}>Sign up here</Text> */}
             </View>
             <View style={appStyles.themeToggle}>
               <Text style={[appStyles.themeText, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>
@@ -76,12 +73,9 @@ const Login = () => {
               </TouchableOpacity>
             </View>
           </View>
-        </ImageBackground>
+
       ) : (
-        <ImageBackground
-          source={require('../assets/logindarkbkgd.png')} // Replace with the actual path for dark mode background image
-          style={{ ...appStyles.app, flex: 1 }}
-        >
+
           <View style={appStyles.loginContainer}>
             <Text style={[appStyles.title, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>Login</Text>
             <View style={appStyles.container}>
@@ -98,11 +92,12 @@ const Login = () => {
                   {/* Add your checkbox and text here */}
                 </View>
                 <TouchableOpacity style={appStyles.button}><Text style={appStyles.buttonText}>Log In</Text></TouchableOpacity>
+                <TouchableOpacity style={appStyles.button}><Text style={appStyles.buttonText}>Forgot Password?</Text></TouchableOpacity>
               </View>
               <View style={appStyles.bottom}>
                 {/* Add your Forgot Password and Reset Password links here */}
               </View>
-              <Text style={appStyles.create}>Sign up here</Text>
+              {/* <Text style={appStyles.create}>Sign up here</Text> */}
             </View>
             <View style={appStyles.themeToggle}>
               <Text style={[appStyles.themeText, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>
@@ -113,7 +108,7 @@ const Login = () => {
               </TouchableOpacity>
             </View>
           </View>
-        </ImageBackground>
+
       )}
     </View>
   );
