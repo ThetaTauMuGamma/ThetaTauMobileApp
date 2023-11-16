@@ -4,6 +4,7 @@ import { View, Text, TextInput, TouchableOpacity, ImageBackground } from 'react-
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
+import { Image } from 'react-native';
 
 Icon.loadFont();
 
@@ -43,6 +44,7 @@ const Login = () => {
       {theme === 'light' ? (
           <View style={appStyles.loginContainer}>
             <Text style={[appStyles.title, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>Login</Text>
+            <Image style={appStyles.logo} source={require('../assets/icon.png')} />
             <View style={appStyles.container}>
               <View style={appStyles.top}>
                 {/* Add your social login buttons here */}
@@ -78,6 +80,7 @@ const Login = () => {
 
           <View style={appStyles.loginContainer}>
             <Text style={[appStyles.title, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>Login</Text>
+            <Image style={appStyles.logo} source={require('../assets/icon.png')} />
             <View style={appStyles.container}>
               <View style={appStyles.top}>
                 {/* Add your social login buttons here */}

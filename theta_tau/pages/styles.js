@@ -119,6 +119,12 @@
       marginTop: 16,
       color: theme === 'dark' ? '#ffffff' : '#000000',
     },
-  });
+    logo: {
+      width: 80, // Set the width of the logo as per your requirement
+      height: 100, // Set the height of the logo as per your requirement
+      marginTop: 16, // Adjust the marginTop to add space between the title and logo based on your requirement
+    }
+    }
+  );
 
   export default styles;
