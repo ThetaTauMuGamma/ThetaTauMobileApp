@@ -7,7 +7,7 @@ import Calender from "./pages/calender.jsx";
 import BrotherPage from "./pages/brotherPage.jsx";
 import Pillars from "./pages/pillars.jsx";
 import EasterEgg from "./pages/easterEgg.jsx";
-import Login from "./pages/login.jsx";
+import Login from "./pages/Login.tsx";
 import Meeting from "./pages/meeting.jsx";
 // import splash from "./components/splash.js";
 import {Appearance} from 'react-native';
@@ -21,15 +21,11 @@ if (colorScheme === 'dark') {
   // Use dark color scheme
 }
 
-export default function App() 
-{
+export default function App() {
+  
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
+      <Stack.Navigator screenOptions={{headerShown: false,}}>
         <Stack.Screen name="Homepage" component={Homepage} />
         <Stack.Screen name="Brothers" component={Brothers} />
         <Stack.Screen name="Calender" component={Calender} />
@@ -42,3 +38,4 @@ export default function App()
     </NavigationContainer>
   );
 }
+

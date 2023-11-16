@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Adjust the icon set based on your preference
 import styles from './styles';
 
+
 Icon.loadFont(); // Load the icon font
 
 const Login = () => {
@@ -40,8 +41,8 @@ const Login = () => {
       <View style={styles.loginContainer}>
         <Text style={[styles.title, { color: theme === 'dark' ? '#ffffff' : '#000000' }]}>Login</Text>
         <View style={styles.container}>
-          <View style={styles.top}>
-            {/* Add your social login buttons here */}
+          <View style={styles.top}> 
+          {/*Add your social login buttons here */}
           </View>
           <Text style={styles.divider}><Text>Or</Text></Text>
           <View style={styles.form}>
@@ -50,12 +51,12 @@ const Login = () => {
             <Text>Password</Text>
             <TextInput style={styles.input} placeholder="Enter your password" secureTextEntry={true} />
             <View style={styles.remember}>
-              {/* Add your checkbox and text here */}
+             {/*Add your checkbox and text here*/}
             </View>
             <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>Log In</Text></TouchableOpacity>
           </View>
           <View style={styles.bottom}>
-            {/* Add your Forgot Password and Reset Password links here */}
+            {<TouchableOpacity style={styles.button}><Text style={styles.buttonText}>Forgot Password</Text></TouchableOpacity>}
           </View>
           <Text style={styles.create}>Sign up here</Text>
         </View>
