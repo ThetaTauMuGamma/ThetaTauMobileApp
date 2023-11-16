@@ -15,10 +15,10 @@ const Navbar = () => {
               <Image source={require('../assets/brothers.png')} style={styles.icon} />
           </Pressable>
           {/* <Pressable style={styles.button} onPress={() => {navigation.navigate('Pollcode')}}>
-              <Image source={require('../assets/icon.png')} style={styles.icon} />
+              <Image source={require('../assets/icon.png')} style={styles.icon2} />
           </Pressable> */}
           <Pressable style={styles.button} onPress={() => {navigation.navigate('Login')}}>
-              <Image source={require('../assets/icon.png')} style={styles.icon} />
+              <Image source={require('../assets/icon.png')} style={styles.icon2} />
           </Pressable>
           <Pressable style={styles.button} onPress={() => {navigation.navigate('Calender')}}>
               <Image source={require('../assets/calendar.png')} style={styles.icon} />
@@ -52,6 +52,11 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     width: 40,
     height: 40,  
+  },
+  icon2: {
+    marginHorizontal: 20,
+    width: 30,
+    height: 50,
   },
 })
 
