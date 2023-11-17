@@ -11,7 +11,6 @@ import Login from "./pages/login.jsx";
 import Meeting from "./pages/meeting.jsx";
 // import splash from "./components/splash.js";
 import {Appearance} from 'react-native';
-import Pollcode from "./pages/pollcode.jsx";
 
 
 
@@ -38,7 +37,6 @@ export default function App()
         <Stack.Screen name="Pillars" component={Pillars}/>
         <Stack.Screen name="EasterEgg" component={EasterEgg} />
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Pollcode" component={Pollcode} />
       </Stack.Navigator>
     </NavigationContainer>
   );

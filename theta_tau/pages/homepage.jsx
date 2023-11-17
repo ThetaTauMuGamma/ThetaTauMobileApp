@@ -179,6 +179,8 @@ const styles = StyleSheet.create({
   dropdownText: {
     color: "#E29900", 
     paddingVertical: 20,
+    textAlign: 'center',
+
   },
   image: {
     height: 68,
