@@ -11,7 +11,7 @@ const App = (props) => {
       </Text>
       <Image
         style={styles.image}
-        source={require("./assets/theta_tau_coa.png")}
+        source={require("./assets/image2.png")}
       />
       <Button
         title="Homepage"
