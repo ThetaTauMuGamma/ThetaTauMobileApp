@@ -28,6 +28,32 @@ const Brother = (props) => {
     require('../assets/pizzaNight.png'), // pizza night
     require('../assets/paintNight.png'), // paint night
     require('../assets/bracelet.png'), // DIY BRACELETS
+    require('../assets/1stDay.jpg'),
+    require('../assets/chill_and_grill.jpg'),
+    require('../assets/GabePizza.jpg'),
+    require('../assets/Game_night.jpg'),
+    require('../assets/Info1.jpg'),
+    require('../assets/info2.jpg'),
+    require('../assets/paint_night.jpg'),
+    require('../assets/speedDating.jpg'),
+  ];
+
+  const eventImages = [
+    "Info Session 1",
+    "Info Session 2",
+    "Game Night",
+    "Meet The Brothers",
+    "Pizza Night",
+    "Paint Night",
+    "D.I.Y. Bracelets",
+    "First Day",
+    "Chill and Grill",
+    "Gabe Pizza",
+    "Game Night Fall",
+    "Info Session 1 Fall",
+    "Info Session 2 Fall",
+    "Paint Night Fall",
+    "Speed Dating Fall"
   ];
 
   const toggleDarkMode = () => {
@@ -49,13 +75,17 @@ const Brother = (props) => {
         />
       </View>
         <Image style={styles.logo} source={require('../assets/theta_tau_coa.png')} />
-        <Event desc={Data.eventData[0].description} title="Info Session 1" imageSource={placeholderImages[0]} />
-        <Event desc={Data.eventData[1].description} title="Info Session 2" imageSource={placeholderImages[1]} />
-        <Event desc={Data.eventData[2].description} title="Game Night" imageSource={placeholderImages[2]} />
-        <Event desc={Data.eventData[3].description} title="Meet The Brothers" imageSource={placeholderImages[3]} />
-        <Event desc={Data.eventData[4].description} title="Pizza Night" imageSource={placeholderImages[4]} />
-        <Event desc={Data.eventData[5].description} title="Paint Night" imageSource={placeholderImages[5]} />
-        <Event desc={Data.eventData[6].description} title="D.I.Y. Bracelets" imageSource={placeholderImages[6]} />
+        
+        {/* Use map to iterate through eventImages */}
+        {eventImages.map((eventName, index) => (
+          <Event
+            key={index} // Add a unique key for each Event component
+            desc={Data.eventData[index].description}
+            title={eventName}
+            imageSource={placeholderImages[index]}
+          />
+        ))}
+
         <Extra />
       </ScrollView>
       <Navbar style={styles.navbar} />
