@@ -22,4 +22,6 @@ class DarkMode {
   }
 }
 
-export default new DarkMode();
+const darkModeInstance = new DarkMode();
+
+export default darkModeInstance;
