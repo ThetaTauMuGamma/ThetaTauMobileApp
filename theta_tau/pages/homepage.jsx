@@ -21,9 +21,13 @@ const Homepage = () => {
   const handleArrowPress3 = () => {
     setIsDropped3(!isDropped3)
   };
+  const handleArrowPress4 = () => {
+    setIsDropped4(!isDropped4)
+  };
 
   return (
     <View style={styles.container} >
+      
     <Pressable onPress={() => {navigation.navigate('EasterEgg')}}><Text style={{color: '#f2f2f2'}}>Easter</Text></Pressable>
       <Image
         style={styles.image}
@@ -94,6 +98,22 @@ const Homepage = () => {
               <Text style={styles.dropdownText}>“Whatsoever thy hand findeth to do, do it with thy might;...” ~Ecclesiastes 9:10</Text>
             </View>
           )}
+
+        {/* <TouchableOpacity onPress={() => handleArrowPress4()}>
+          <View style={styles.dropdownRow}>
+            <View style={styles.dropdownRow2}>
+              <Text style={styles.aboutMe}>Open Motto</Text>
+            </View>
+              <View style={{ paddingRight: 10}}>
+                {isDropped3 ? <Text>&#9650;</Text> : <Text>&#9660;</Text>}
+              </View>
+          </View>
+        </TouchableOpacity>
+          {isDropped4 && (
+            <View style={styles.dropdownContainer}>
+              <Text style={styles.dropdownText}>“Whatsoever thy hand findeth to do, do it with thy might;...” ~Ecclesiastes 9:10</Text>
+            </View>
+          )} */}
       
       <Extra />
       </ScrollView>
@@ -162,6 +182,7 @@ const styles = StyleSheet.create({
   },
   image: {
     height: 68,
+    marginTop: 20,
     width: 40,
   },
 });

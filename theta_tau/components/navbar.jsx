@@ -9,13 +9,16 @@ const Navbar = () => {
   return (
       <View style={styles.navbar}>
           <Pressable style={styles.button} onPress={() => {navigation.navigate('Homepage')}}>
-              <Image source={require('../assets/white_homePage.png')} style={styles.icon} />
+              <Image source={require('../assets/home.png')} style={styles.icon} />
           </Pressable>
           <Pressable style={styles.button} onPress={() => {navigation.navigate('Brothers')}}>
-              <Image source={require('../assets/Brothers_Tab.png')} style={styles.icon} />
+              <Image source={require('../assets/brothers.png')} style={styles.icon} />
+          </Pressable>
+          <Pressable style={styles.button} onPress={() => {navigation.navigate('Login')}}>
+              <Image source={require('../assets/icon.png')} style={styles.icon} />
           </Pressable>
           <Pressable style={styles.button} onPress={() => {navigation.navigate('Calender')}}>
-              <Image source={require('../assets/rushIcon.png')} style={styles.icon} />
+              <Image source={require('../assets/calendar.png')} style={styles.icon} />
           </Pressable>
           <Pressable style={styles.button} onPress={() => {navigation.navigate('Pillars')}}>
               <Image source={require('../assets/pillars.png')} style={styles.icon} />
@@ -27,7 +30,7 @@ const Navbar = () => {
 const styles = StyleSheet.create({
 
   navbar: {
-    backgroundColor: '#710000',
+    backgroundColor: '#ffffff',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -37,11 +40,13 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    zIndex: 5
-  
+    zIndex: 5,
+    borderWidth: 2, // Border width in pixels
+    borderColor: '#000', // Border color
+    padding: 10, // Optional: Add padding to the component
   },
   icon: {
-    marginHorizontal: 33,
+    marginHorizontal: 20,
     width: 40,
     height: 40,  
   },
